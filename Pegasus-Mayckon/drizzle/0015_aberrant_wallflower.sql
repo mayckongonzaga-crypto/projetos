@@ -1,0 +1,1 @@
+ALTER TABLE `download_logs` MODIFY COLUMN `status` enum('pendente','executando','concluido','erro','cancelado','retomando') NOT NULL DEFAULT 'pendente';

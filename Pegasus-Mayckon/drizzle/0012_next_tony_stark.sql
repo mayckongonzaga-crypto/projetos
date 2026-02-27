@@ -1,0 +1,1 @@
+ALTER TABLE `download_logs` ADD `etapa` varchar(255);

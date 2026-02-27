@@ -1,0 +1,1 @@
+ALTER TABLE `contabilidades` ADD `auditRetencaoDias` int DEFAULT 90 NOT NULL;

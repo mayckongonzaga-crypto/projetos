@@ -1,0 +1,1 @@
+ALTER TABLE `contabilidades` ADD `retencaoMeses` int DEFAULT 12 NOT NULL;

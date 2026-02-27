@@ -1,0 +1,53 @@
+# Dependências (serão instaladas no container)
+node_modules
+.pnpm-store
+
+# Build output (será gerado no container)
+dist
+build
+
+# Git
+.git
+.gitignore
+.gitkeep
+
+# Ambiente local
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+.manus-logs
+
+# Documentação (não necessária no container)
+*.md
+*.pdf
+*.xlsx
+*.txt
+
+# Arquivos de teste
+*.test.ts
+test-*.mjs
+vitest.config.ts
+
+# Debug/Dev
+.manus
+debug_notes.txt
+check-db.mjs
+seed-admin.mjs
+
+# Docker (evitar loop)
+Dockerfile
+docker-compose.yml
+.dockerignore

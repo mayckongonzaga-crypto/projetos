@@ -1,0 +1,1 @@
+ALTER TABLE `agendamentos` ADD `tipoDocumento` enum('nfe','cte','ambos') DEFAULT 'nfe' NOT NULL;

@@ -1,0 +1,22 @@
+ALTER TABLE `clientes` ADD `contatoPrincipal` varchar(255);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `contatoSecundario` varchar(255);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `emailSecundario` varchar(320);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `telefone2` varchar(20);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `logradouro` varchar(255);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `numero` varchar(20);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `complemento` varchar(255);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `bairro` varchar(100);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `tipoCliente` varchar(50);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `regimeTributario` varchar(100);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `naturezaJuridica` varchar(255);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `capitalSocial` varchar(50);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `porte` varchar(50);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `dataAbertura` varchar(20);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `situacaoCadastral` varchar(50);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `socios` text;--> statement-breakpoint
+ALTER TABLE `clientes` ADD `cnaePrincipal` varchar(20);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `cnaePrincipalDescricao` varchar(500);--> statement-breakpoint
+ALTER TABLE `clientes` ADD `cnaesSecundarios` text;--> statement-breakpoint
+ALTER TABLE `clientes` ADD `optanteSimples` boolean;--> statement-breakpoint
+ALTER TABLE `clientes` ADD `optanteMEI` boolean;--> statement-breakpoint
+ALTER TABLE `clientes` ADD `dadosReceitaAtualizadosEm` timestamp;

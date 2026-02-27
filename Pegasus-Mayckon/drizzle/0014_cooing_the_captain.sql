@@ -1,0 +1,1 @@
+ALTER TABLE `download_logs` ADD `tentativas` int DEFAULT 0;

@@ -1,0 +1,766 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-family);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TEMA 1: EMERALD — Verde Profissional (inspirado Supabase)
+   Light mode padrão
+   ═══════════════════════════════════════════════════════════════════ */
+:root,
+[data-theme="emerald"] {
+  --radius: 0.625rem;
+  --font-family: "Outfit", system-ui, -apple-system, sans-serif;
+  --background: oklch(0.9911 0 0);
+  --foreground: oklch(0.2046 0 0);
+  --card: oklch(0.9911 0 0);
+  --card-foreground: oklch(0.2046 0 0);
+  --popover: oklch(0.9911 0 0);
+  --popover-foreground: oklch(0.4386 0 0);
+  --primary: oklch(0.6960 0.1740 155);
+  --primary-foreground: oklch(0.9911 0 0);
+  --secondary: oklch(0.9540 0.0080 155);
+  --secondary-foreground: oklch(0.2046 0 0);
+  --muted: oklch(0.9461 0 0);
+  --muted-foreground: oklch(0.4500 0 0);
+  --accent: oklch(0.9461 0.0100 155);
+  --accent-foreground: oklch(0.2435 0 0);
+  --destructive: oklch(0.5523 0.1927 32.7272);
+  --destructive-foreground: oklch(0.9934 0.0032 17.2118);
+  --border: oklch(0.9037 0 0);
+  --input: oklch(0.9231 0 0);
+  --ring: oklch(0.6960 0.1740 155);
+  --chart-1: oklch(0.6960 0.1740 155);
+  --chart-2: oklch(0.6231 0.1880 259.81);
+  --chart-3: oklch(0.6056 0.2189 292.72);
+  --chart-4: oklch(0.7686 0.1647 70.08);
+  --chart-5: oklch(0.6959 0.1491 162.48);
+  --sidebar: oklch(0.1700 0.0150 155);
+  --sidebar-foreground: oklch(0.8800 0 0);
+  --sidebar-primary: oklch(0.6960 0.1740 155);
+  --sidebar-primary-foreground: oklch(0.9911 0 0);
+  --sidebar-accent: oklch(0.2400 0.0200 155);
+  --sidebar-accent-foreground: oklch(0.9500 0 0);
+  --sidebar-border: oklch(0.2800 0.0100 155);
+  --sidebar-ring: oklch(0.6960 0.1740 155);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   EMERALD DARK — Premium Dark (Dhanesh T S inspired)
+   Deep dark, glassmorphism cards, neon green accents
+   ═══════════════════════════════════════════════════════════════════ */
+[data-theme="emerald-dark"] {
+  --radius: 0.75rem;
+  --font-family: "Outfit", system-ui, -apple-system, sans-serif;
+  --background: #080d15;
+  --foreground: #e2e8f0;
+  --card: #0f1623;
+  --card-foreground: #e2e8f0;
+  --popover: #111a2b;
+  --popover-foreground: #94a3b8;
+  --primary: #22c55e;
+  --primary-foreground: #022c22;
+  --secondary: #0d1a12;
+  --secondary-foreground: #e2e8f0;
+  --muted: #131d2e;
+  --muted-foreground: #64748b;
+  --accent: #0d2818;
+  --accent-foreground: #86efac;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #1a2740;
+  --input: #131d2e;
+  --ring: #22c55e;
+  --chart-1: #4ade80;
+  --chart-2: #60a5fa;
+  --chart-3: #a78bfa;
+  --chart-4: #22d3ee;
+  --chart-5: #fbbf24;
+  --sidebar: #060a12;
+  --sidebar-foreground: #64748b;
+  --sidebar-primary: #22c55e;
+  --sidebar-primary-foreground: #022c22;
+  --sidebar-accent: #0d1a12;
+  --sidebar-accent-foreground: #e2e8f0;
+  --sidebar-border: #152030;
+  --sidebar-ring: #22c55e;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TEMA 2: SUNSET — Terracota Elegante (inspirado Claude)
+   ═══════════════════════════════════════════════════════════════════ */
+[data-theme="sunset"] {
+  --radius: 0.625rem;
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --background: #FAF9F5;
+  --foreground: #262624;
+  --card: #FFFFFF;
+  --card-foreground: #262624;
+  --popover: #FFFFFF;
+  --popover-foreground: #262624;
+  --primary: #D97757;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F0EB;
+  --secondary-foreground: #262624;
+  --muted: #F5F0EB;
+  --muted-foreground: #9C9A92;
+  --accent: #F5EDE8;
+  --accent-foreground: #262624;
+  --destructive: #DC3545;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E2DA;
+  --input: #EDEBE6;
+  --ring: #D97757;
+  --chart-1: #D97757;
+  --chart-2: #C6613F;
+  --chart-3: #E8A87C;
+  --chart-4: #8B6F47;
+  --chart-5: #B5977D;
+  --sidebar: #2C2A28;
+  --sidebar-foreground: #E8E5DE;
+  --sidebar-primary: #D97757;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #3A3836;
+  --sidebar-accent-foreground: #F5F0EB;
+  --sidebar-border: #4A4745;
+  --sidebar-ring: #D97757;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SUNSET DARK — Premium Dark (Dhanesh T S inspired)
+   Deep dark, warm orange/amber neon accents
+   ═══════════════════════════════════════════════════════════════════ */
+[data-theme="sunset-dark"] {
+  --radius: 0.75rem;
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --background: #0a0908;
+  --foreground: #faf9f5;
+  --card: #151210;
+  --card-foreground: #faf9f5;
+  --popover: #1a1614;
+  --popover-foreground: #a8a29e;
+  --primary: #f97316;
+  --primary-foreground: #431407;
+  --secondary: #1a1210;
+  --secondary-foreground: #faf9f5;
+  --muted: #1e1916;
+  --muted-foreground: #78716c;
+  --accent: #261a10;
+  --accent-foreground: #fed7aa;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #2a2220;
+  --input: #1e1916;
+  --ring: #f97316;
+  --chart-1: #fb923c;
+  --chart-2: #f97316;
+  --chart-3: #fbbf24;
+  --chart-4: #ef4444;
+  --chart-5: #a78bfa;
+  --sidebar: #080706;
+  --sidebar-foreground: #78716c;
+  --sidebar-primary: #f97316;
+  --sidebar-primary-foreground: #431407;
+  --sidebar-accent: #1a1210;
+  --sidebar-accent-foreground: #faf9f5;
+  --sidebar-border: #221c1a;
+  --sidebar-ring: #f97316;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TEMA 3: MIDNIGHT — Azul Corporativo Moderno
+   ═══════════════════════════════════════════════════════════════════ */
+[data-theme="midnight"] {
+  --radius: 0.625rem;
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --background: #FFFFFF;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #334155;
+  --primary: #2563EB;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F1F5F9;
+  --secondary-foreground: #0F172A;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #EFF6FF;
+  --accent-foreground: #1E40AF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #E2E8F0;
+  --input: #F1F5F9;
+  --ring: #2563EB;
+  --chart-1: #2563EB;
+  --chart-2: #7C3AED;
+  --chart-3: #0891B2;
+  --chart-4: #EA580C;
+  --chart-5: #16A34A;
+  --sidebar: #0F172A;
+  --sidebar-foreground: #CBD5E1;
+  --sidebar-primary: #3B82F6;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1E293B;
+  --sidebar-accent-foreground: #F1F5F9;
+  --sidebar-border: #1E293B;
+  --sidebar-ring: #3B82F6;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MIDNIGHT DARK — Premium Dark (Dhanesh T S inspired)
+   The flagship: deep navy, glassmorphism, neon blue/purple graphs
+   ═══════════════════════════════════════════════════════════════════ */
+[data-theme="midnight-dark"] {
+  --radius: 0.75rem;
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --background: #0b1120;
+  --foreground: #e2e8f0;
+  --card: #111827;
+  --card-foreground: #e2e8f0;
+  --popover: #141c2e;
+  --popover-foreground: #94a3b8;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #0f1a30;
+  --secondary-foreground: #e2e8f0;
+  --muted: #162036;
+  --muted-foreground: #64748b;
+  --accent: #172554;
+  --accent-foreground: #bfdbfe;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #1e293b;
+  --input: #162036;
+  --ring: #3b82f6;
+  --chart-1: #60a5fa;
+  --chart-2: #a78bfa;
+  --chart-3: #22d3ee;
+  --chart-4: #fb923c;
+  --chart-5: #4ade80;
+  --sidebar: #070d1a;
+  --sidebar-foreground: #64748b;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #0f172a;
+  --sidebar-accent-foreground: #e2e8f0;
+  --sidebar-border: #172036;
+  --sidebar-ring: #3b82f6;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   EMERALD DIM — Penumbra (cinza escuro sofisticado, cards flutuantes)
+   Intermediário entre claro e escuro: fundo cinza grafite, sem bordas visíveis
+   ═══════════════════════════════════════════════════════════════════ */
+[data-theme="emerald-dim"] {
+  --radius: 0.75rem;
+  --font-family: "Outfit", system-ui, -apple-system, sans-serif;
+  --background: #2b2f33;
+  --foreground: #d4d8de;
+  --card: #353a40;
+  --card-foreground: #dce0e6;
+  --popover: #353a40;
+  --popover-foreground: #b0b6bf;
+  --primary: #34d399;
+  --primary-foreground: #022c22;
+  --secondary: #3a4048;
+  --secondary-foreground: #d4d8de;
+  --muted: #3a4048;
+  --muted-foreground: #8a919b;
+  --accent: #2f3d35;
+  --accent-foreground: #86efac;
+  --destructive: #f87171;
+  --destructive-foreground: #ffffff;
+  --border: #3e444c;
+  --input: #3a4048;
+  --ring: #34d399;
+  --chart-1: #34d399;
+  --chart-2: #60a5fa;
+  --chart-3: #a78bfa;
+  --chart-4: #22d3ee;
+  --chart-5: #fbbf24;
+  --sidebar: #22262a;
+  --sidebar-foreground: #94a0ad;
+  --sidebar-primary: #34d399;
+  --sidebar-primary-foreground: #022c22;
+  --sidebar-accent: #2e3338;
+  --sidebar-accent-foreground: #dce0e6;
+  --sidebar-border: #353a40;
+  --sidebar-ring: #34d399;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SUNSET DIM — Penumbra (cinza escuro quente, cards flutuantes)
+   Intermediário entre claro e escuro: fundo cinza quente, sem bordas visíveis
+   ═══════════════════════════════════════════════════════════════════ */
+[data-theme="sunset-dim"] {
+  --radius: 0.75rem;
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --background: #2e2a28;
+  --foreground: #dcd5ce;
+  --card: #383330;
+  --card-foreground: #e4ddd6;
+  --popover: #383330;
+  --popover-foreground: #b5ada5;
+  --primary: #f59e0b;
+  --primary-foreground: #451a03;
+  --secondary: #3d3734;
+  --secondary-foreground: #dcd5ce;
+  --muted: #3d3734;
+  --muted-foreground: #918880;
+  --accent: #3d3028;
+  --accent-foreground: #fed7aa;
+  --destructive: #f87171;
+  --destructive-foreground: #ffffff;
+  --border: #443e3b;
+  --input: #3d3734;
+  --ring: #f59e0b;
+  --chart-1: #fb923c;
+  --chart-2: #f59e0b;
+  --chart-3: #fbbf24;
+  --chart-4: #ef4444;
+  --chart-5: #a78bfa;
+  --sidebar: #252220;
+  --sidebar-foreground: #a09890;
+  --sidebar-primary: #f59e0b;
+  --sidebar-primary-foreground: #451a03;
+  --sidebar-accent: #312c2a;
+  --sidebar-accent-foreground: #e4ddd6;
+  --sidebar-border: #383330;
+  --sidebar-ring: #f59e0b;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MIDNIGHT DIM — Penumbra (cinza escuro azulado, cards flutuantes)
+   Intermediário entre claro e escuro: fundo cinza azulado, sem bordas visíveis
+   ═══════════════════════════════════════════════════════════════════ */
+[data-theme="midnight-dim"] {
+  --radius: 0.75rem;
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+  --background: #282d35;
+  --foreground: #d0d6e0;
+  --card: #323842;
+  --card-foreground: #dae0ea;
+  --popover: #323842;
+  --popover-foreground: #a8b0be;
+  --primary: #60a5fa;
+  --primary-foreground: #ffffff;
+  --secondary: #373e48;
+  --secondary-foreground: #d0d6e0;
+  --muted: #373e48;
+  --muted-foreground: #8690a0;
+  --accent: #2a3550;
+  --accent-foreground: #bfdbfe;
+  --destructive: #f87171;
+  --destructive-foreground: #ffffff;
+  --border: #3c4350;
+  --input: #373e48;
+  --ring: #60a5fa;
+  --chart-1: #60a5fa;
+  --chart-2: #a78bfa;
+  --chart-3: #22d3ee;
+  --chart-4: #fb923c;
+  --chart-5: #4ade80;
+  --sidebar: #1f242c;
+  --sidebar-foreground: #8a95a8;
+  --sidebar-primary: #60a5fa;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2a3038;
+  --sidebar-accent-foreground: #dae0ea;
+  --sidebar-border: #323842;
+  --sidebar-ring: #60a5fa;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════════ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   COMPONENT UTILITIES
+   ═══════════════════════════════════════════════════════════════════ */
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1440px;
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PREMIUM DARK THEME — Futuristic Floating Cards & Neon Glow
+   Inspired by Dhanesh T S dashboard design
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Premium scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ─── FLOATING CARDS with colored glow shadows ─── */
+.dark [data-slot="card"] {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.dark [data-slot="card"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.15) 50%, transparent 90%);
+  z-index: 1;
+}
+.dark [data-slot="card"]:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 16px 50px rgba(0, 0, 0, 0.6),
+    0 6px 16px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Theme-specific card glow colors */
+[data-theme="midnight-dark"] [data-slot="card"] {
+  box-shadow:
+    0 10px 40px rgba(59, 130, 246, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(59, 130, 246, 0.06),
+    inset 0 1px 0 rgba(59, 130, 246, 0.08),
+    inset 0 0 0 0.5px rgba(59, 130, 246, 0.05);
+}
+[data-theme="midnight-dark"] [data-slot="card"]:hover {
+  box-shadow:
+    0 20px 60px rgba(59, 130, 246, 0.2),
+    0 6px 16px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(59, 130, 246, 0.12),
+    inset 0 0 0 0.5px rgba(59, 130, 246, 0.08);
+}
+[data-theme="emerald-dark"] [data-slot="card"] {
+  box-shadow:
+    0 10px 40px rgba(34, 197, 94, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(34, 197, 94, 0.05),
+    inset 0 1px 0 rgba(34, 197, 94, 0.07),
+    inset 0 0 0 0.5px rgba(34, 197, 94, 0.04);
+}
+[data-theme="emerald-dark"] [data-slot="card"]:hover {
+  box-shadow:
+    0 20px 60px rgba(34, 197, 94, 0.18),
+    0 6px 16px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(34, 197, 94, 0.08),
+    inset 0 1px 0 rgba(34, 197, 94, 0.1),
+    inset 0 0 0 0.5px rgba(34, 197, 94, 0.06);
+}
+[data-theme="sunset-dark"] [data-slot="card"] {
+  box-shadow:
+    0 10px 40px rgba(249, 115, 22, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(249, 115, 22, 0.05),
+    inset 0 1px 0 rgba(249, 115, 22, 0.07),
+    inset 0 0 0 0.5px rgba(249, 115, 22, 0.04);
+}
+[data-theme="sunset-dark"] [data-slot="card"]:hover {
+  box-shadow:
+    0 20px 60px rgba(249, 115, 22, 0.18),
+    0 6px 16px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(249, 115, 22, 0.08),
+    inset 0 1px 0 rgba(249, 115, 22, 0.1),
+    inset 0 0 0 0.5px rgba(249, 115, 22, 0.06);
+}
+
+/* ─── STAT CARD icon glow effect ─── */
+.dark .stat-icon-glow {
+  position: relative;
+}
+.dark .stat-icon-glow::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 12px;
+  opacity: 0.4;
+  filter: blur(8px);
+  z-index: -1;
+  background: inherit;
+}
+
+/* ─── PREMIUM TABLE styling ─── */
+.dark thead tr {
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.dark tbody tr {
+  transition: all 0.2s ease;
+}
+.dark tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ─── INPUT focus glow ─── */
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus,
+.dark [data-slot="input"]:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25), 0 0 20px rgba(59, 130, 246, 0.1);
+}
+[data-theme="emerald-dark"] input:focus,
+[data-theme="emerald-dark"] select:focus,
+[data-theme="emerald-dark"] textarea:focus {
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25), 0 0 20px rgba(34, 197, 94, 0.1);
+}
+[data-theme="sunset-dark"] input:focus,
+[data-theme="sunset-dark"] select:focus,
+[data-theme="sunset-dark"] textarea:focus {
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.25), 0 0 20px rgba(249, 115, 22, 0.1);
+}
+
+/* ─── DIALOG/MODAL premium ─── */
+.dark [data-slot="dialog-overlay"] {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+}
+.dark [data-slot="dialog-content"] {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* ─── RECHARTS premium dark ─── */
+.dark .recharts-default-tooltip {
+  background: rgba(10, 15, 30, 0.95) !important;
+  border: 1px solid rgba(100, 180, 255, 0.2) !important;
+  border-radius: 12px !important;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(59, 130, 246, 0.15) !important;
+  backdrop-filter: blur(16px) !important;
+  color: #e2e8f0 !important;
+}
+.dark .recharts-default-tooltip .recharts-tooltip-label {
+  color: #94a3b8 !important;
+  font-weight: 600 !important;
+}
+.dark .recharts-default-tooltip .recharts-tooltip-item {
+  color: #e2e8f0 !important;
+  font-weight: 400 !important;
+}
+.dark .recharts-tooltip-cursor {
+  fill: transparent !important;
+  stroke: rgba(255, 255, 255, 0.1) !important;
+}
+.dark .recharts-cartesian-grid line {
+  stroke: rgba(255, 255, 255, 0.04) !important;
+}
+.dark .recharts-cartesian-axis-line {
+  stroke: rgba(255, 255, 255, 0.06) !important;
+}
+.dark .recharts-cartesian-axis-tick-line {
+  stroke: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* ─── SIDEBAR premium ─── */
+.dark [data-sidebar] {
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+}
+.dark [data-sidebar] [data-active="true"] {
+  position: relative;
+}
+[data-theme="midnight-dark"] [data-sidebar] [data-active="true"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  border-radius: 0 4px 4px 0;
+  background: #3b82f6;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+}
+[data-theme="emerald-dark"] [data-sidebar] [data-active="true"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  border-radius: 0 4px 4px 0;
+  background: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.5);
+}
+[data-theme="sunset-dark"] [data-sidebar] [data-active="true"]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  border-radius: 0 4px 4px 0;
+  background: #f97316;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.5);
+}
+
+/* ─── BADGE glassmorphism ─── */
+.dark [data-slot="badge"] {
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ─── SELECT/DROPDOWN premium ─── */
+.dark [data-slot="select-content"],
+.dark [role="listbox"] {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+}
+
+/* ─── BUTTON glow on hover ─── */
+.dark button[data-slot="button"]:not([data-variant="ghost"]):not([data-variant="link"]):hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+[data-theme="midnight-dark"] button[data-slot="button"][data-variant="default"]:hover {
+  box-shadow: 0 4px 24px rgba(59, 130, 246, 0.4), 0 0 12px rgba(59, 130, 246, 0.2);
+}
+[data-theme="emerald-dark"] button[data-slot="button"][data-variant="default"]:hover {
+  box-shadow: 0 4px 24px rgba(34, 197, 94, 0.4), 0 0 12px rgba(34, 197, 94, 0.2);
+}
+[data-theme="sunset-dark"] button[data-slot="button"][data-variant="default"]:hover {
+  box-shadow: 0 4px 24px rgba(249, 115, 22, 0.4), 0 0 12px rgba(249, 115, 22, 0.2);
+}
+
+/* ─── CHART area gradient defs (used by Recharts) ─── */
+.dark .recharts-area-area {
+  filter: drop-shadow(0 0 10px currentColor);
+}
+.dark .recharts-line-curve {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+.dark .recharts-bar-rectangle rect {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 6px rgba(59, 130, 246, 0.15));
+}
+
+/* ─── PIE chart neon glow ─── */
+.dark .recharts-pie-sector path {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* ─── LEGEND text color fix ─── */
+.dark .recharts-legend-item-text {
+  color: #94a3b8 !important;
+}
+
+/* ─── Active sidebar item glow ─── */
+.dark [data-sidebar] [data-active="true"] {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 20px rgba(var(--sidebar-primary), 0.15);
+}
